@@ -101,7 +101,12 @@ public class Biblioteca extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_NombreLibro = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ta_DescripcionTodosLibros = new javax.swing.JTextArea();
+        jLabel32 = new javax.swing.JLabel();
+        jb_AgregarLibro = new javax.swing.JButton();
+        jb_ActualizarLista = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -540,10 +545,30 @@ public class Biblioteca extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar Amigos", jPanel3);
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         jLabel22.setText("Agregar Libros a mi lista");
 
         jLabel26.setText("Nombre del Libro :");
+
+        ta_DescripcionTodosLibros.setColumns(20);
+        ta_DescripcionTodosLibros.setRows(5);
+        jScrollPane5.setViewportView(ta_DescripcionTodosLibros);
+
+        jLabel32.setText("Lista de libros");
+
+        jb_AgregarLibro.setText("Agregar");
+        jb_AgregarLibro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_AgregarLibroMouseClicked(evt);
+            }
+        });
+
+        jb_ActualizarLista.setText("Actualizar Lista");
+        jb_ActualizarLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ActualizarListaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -552,14 +577,25 @@ public class Biblioteca extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addComponent(jLabel32))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tf_NombreLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jb_AgregarLibro))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(140, Short.MAX_VALUE))
+                        .addGap(129, 129, 129)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jb_ActualizarLista)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -569,8 +605,15 @@ public class Biblioteca extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(405, Short.MAX_VALUE))
+                    .addComponent(tf_NombreLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_AgregarLibro))
+                .addGap(24, 24, 24)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_ActualizarLista)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mi Lista de libros", jPanel1);
@@ -599,11 +642,11 @@ public class Biblioteca extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(183, 183, 183)
-                        .addComponent(jb_BuscarLibrosFav, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jb_BuscarLibrosFav, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -613,9 +656,9 @@ public class Biblioteca extends javax.swing.JFrame {
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jb_BuscarLibrosFav, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(37, 37, 37)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lista de libros favoritos", jPanel4);
@@ -948,15 +991,46 @@ public class Biblioteca extends javax.swing.JFrame {
     
     private void jb_BuscarLibrosFavMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_BuscarLibrosFavMouseClicked
         if (Adminhabilitado==true) {
-            JOptionPane.showInputDialog(this, "Inicie sesion con otro usuario");
+            JOptionPane.showMessageDialog(this, "Inicie sesion con otro usuario");
         }else if (Usuariohabilitado==true){
             for (int i = 0; i < libros.size(); i++) {
                 if (libros.get(i).getGenero().equals(usuarios.get(Elusuario_numero).getGenero_fav())) {
-                    
+                    ta_Librosfav.setText(libros.get(i).toString());
                 }
             }
+        }else{
+            JOptionPane.showMessageDialog(this, "Inicie sesion con usuario");
         }
     }//GEN-LAST:event_jb_BuscarLibrosFavMouseClicked
+
+    private void jb_AgregarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_AgregarLibroMouseClicked
+        String nombre;
+        boolean correcto = false;
+        if (Usuariohabilitado==true) {
+            nombre = tf_NombreLibro.getText();
+            for (int i = 0; i < libros.size(); i++) {
+                if (libros.get(i).getTitulo().equals(nombre)) {
+                    usuarios.get(Elusuario_numero).setMislibros(libros.get(i));
+                }
+            }
+            if (correcto==true) {
+                JOptionPane.showMessageDialog(this, "Se agrego un libro exitosamente");
+            }else{
+                JOptionPane.showMessageDialog(this, "No se agrego libro, ingrese correctamente el nombre");
+            }
+        }else if (Adminhabilitado==true){
+            JOptionPane.showMessageDialog(this, "Inicie sesion con usuario");
+        }else{
+            JOptionPane.showMessageDialog(this, "Inicie sesion con algun usuario");
+        }
+    }//GEN-LAST:event_jb_AgregarLibroMouseClicked
+
+    private void jb_ActualizarListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ActualizarListaMouseClicked
+        // TODO add your handling code here:
+        for (int i = 0; i < libros.size(); i++) {
+            ta_DescripcionTodosLibros.setText(libros.get(i).toString());
+        }
+    }//GEN-LAST:event_jb_ActualizarListaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1044,6 +1118,7 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1059,8 +1134,10 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jb_ActualizarLista;
+    private javax.swing.JButton jb_AgregarLibro;
     private javax.swing.JButton jb_BuscarLibro;
     private javax.swing.JButton jb_BuscarLibrosFav;
     private javax.swing.JButton jb_MandarSolicitud;
@@ -1076,9 +1153,11 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_romance;
     private javax.swing.JTextArea ta_DescripcionAmigo;
     private javax.swing.JTextArea ta_DescripcionDeUnLibro;
+    private javax.swing.JTextArea ta_DescripcionTodosLibros;
     private javax.swing.JTextArea ta_Librosfav;
     private javax.swing.JTextArea ta_descripcion;
     private javax.swing.JTextField tf_NombreCompleto;
+    private javax.swing.JTextField tf_NombreLibro;
     private javax.swing.JTextField tf_NombreUsuario;
     private javax.swing.JTextField tf_NombreuserLogin;
     private javax.swing.JTextField tf_SolicitudNombre;
