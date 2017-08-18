@@ -1078,7 +1078,7 @@ public class Biblioteca extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "No hay libros para mostrar");
             }
         }else{
-                JOptionPane.showMessageDialog(this, "Necesitas ser admin");
+                JOptionPane.showMessageDialog(this, "Necesitas iniciar sesion con otro usuario");
         }
     }//GEN-LAST:event_jb_BuscarLibroMouseClicked
 
@@ -1127,15 +1127,18 @@ public class Biblioteca extends javax.swing.JFrame {
 
     
     private void jb_BuscarLibrosFavMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_BuscarLibrosFavMouseClicked
+        String acum = "";
         if (Adminhabilitado==true) {
             JOptionPane.showMessageDialog(this, "Inicie sesion con otro usuario");
         }else if (Usuariohabilitado==true){
             Acciones.add("Se busco todos los libros");
             for (int i = 0; i < libros.size(); i++) {
                 if (libros.get(i).getGenero().equals(usuarios.get(Elusuario_numero).getGenero_fav())) {
-                    ta_Librosfav.setText(libros.get(i).toString());
+                    acum+=libros.get(i).toString()+"\n";
+                    
                 }
             }
+            ta_Librosfav.setText(acum);
         }else{
             JOptionPane.showMessageDialog(this, "Inicie sesion con usuario");
         }
