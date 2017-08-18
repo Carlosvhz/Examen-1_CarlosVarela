@@ -123,6 +123,19 @@ public class Biblioteca extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jb_cerrarSesion = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ta_Listadeacciones = new javax.swing.JTextArea();
+        jb_ActualizarAcciones = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        ta_libroseliminar = new javax.swing.JTextArea();
+        jLabel35 = new javax.swing.JLabel();
+        tf_EliminarLibro = new javax.swing.JTextField();
+        jb_Eliminar = new javax.swing.JButton();
+        jb_ActualizarEliminarLista = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -223,7 +236,7 @@ public class Biblioteca extends javax.swing.JFrame {
                         .addComponent(cb_romance)
                         .addGap(1, 1, 1)
                         .addComponent(cb_historia)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         jp_agregarUsuarioLayout.setVerticalGroup(
             jp_agregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,7 +319,7 @@ public class Biblioteca extends javax.swing.JFrame {
                     .addGroup(jp_LoginLayout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(jb_iniciarsesion, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jp_LoginLayout.setVerticalGroup(
             jp_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,7 +447,7 @@ public class Biblioteca extends javax.swing.JFrame {
                                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(dc_FechaLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         jp_AgregarLibrosLayout.setVerticalGroup(
             jp_AgregarLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -524,7 +537,7 @@ public class Biblioteca extends javax.swing.JFrame {
                         .addComponent(jLabel30)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -595,7 +608,7 @@ public class Biblioteca extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addComponent(jb_ActualizarLista)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -647,7 +660,7 @@ public class Biblioteca extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -701,7 +714,7 @@ public class Biblioteca extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -742,7 +755,7 @@ public class Biblioteca extends javax.swing.JFrame {
                 .addComponent(jb_cerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(53, Short.MAX_VALUE)
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
         );
@@ -757,6 +770,115 @@ public class Biblioteca extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Cerrar Sesion", jPanel5);
+
+        jLabel33.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
+        jLabel33.setText("Acciones que se han hecho... ");
+
+        ta_Listadeacciones.setColumns(20);
+        ta_Listadeacciones.setRows(5);
+        jScrollPane6.setViewportView(ta_Listadeacciones);
+
+        jb_ActualizarAcciones.setText("Actualizar Lista");
+        jb_ActualizarAcciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ActualizarAccionesMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(86, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jb_ActualizarAcciones, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_ActualizarAcciones)
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Lista de acciones", jPanel6);
+
+        jLabel34.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jLabel34.setText("Eliminar...");
+
+        ta_libroseliminar.setColumns(20);
+        ta_libroseliminar.setRows(5);
+        jScrollPane7.setViewportView(ta_libroseliminar);
+
+        jLabel35.setText("Ingresar Nombre:");
+
+        jb_Eliminar.setText("Eliminar");
+        jb_Eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_EliminarMouseClicked(evt);
+            }
+        });
+
+        jb_ActualizarEliminarLista.setText("Actualizar");
+        jb_ActualizarEliminarLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ActualizarEliminarListaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel35)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_EliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_Eliminar))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addComponent(jb_ActualizarEliminarLista)))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_EliminarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35)
+                    .addComponent(jb_Eliminar))
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_ActualizarEliminarLista)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eliminar ", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -803,6 +925,7 @@ public class Biblioteca extends javax.swing.JFrame {
                 genero_favorito = "";
             }
             usuarios.add(new Usuario(nombre_usuario, contraseña, correo, nombre, genero_favorito, fecha, telefono));
+            Acciones.add("Se ingreso usuario. ");
             //Reiniciando variables
             tf_telefono.setText("");
             tf_NombreCompleto.setText("");
@@ -845,19 +968,26 @@ public class Biblioteca extends javax.swing.JFrame {
             //Para admin
             if (nombre.equals(nombreAdmin)&&contraseña.equals(contraseñaAdmin)) {
                 JOptionPane.showMessageDialog(this, "Bienvenido Admin");
+                tf_NombreuserLogin.setText("");
+                tf_contraseñaLogin.setText("");
                 Adminhabilitado = true;
+                Acciones.add("Admin inicio sesion");
             //Para otros usuarios
             }else if (inicio(nombre,contraseña)==true){
                 JOptionPane.showMessageDialog(this, "Bienvenido "+nombre);
                 tf_NombreuserLogin.setText("");
                 tf_contraseñaLogin.setText("");
+                Acciones.add("Usuario Ingreso sesion");
             }else{
                 JOptionPane.showMessageDialog(this, "No inicio sesion, ingrese de nuevo");
+                tf_NombreuserLogin.setText("");
+                tf_contraseñaLogin.setText("");
             }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "No se inicio, ingrese de nuevo correctamente los datos");
             }
         }else{
+            
             JOptionPane.showMessageDialog(this,"Tiene sesion iniciada");
         }
     }//GEN-LAST:event_jb_iniciarsesionMouseClicked
@@ -876,6 +1006,9 @@ public class Biblioteca extends javax.swing.JFrame {
         if (Adminhabilitado==true) {
             try {
                 puntaje = Integer.parseInt(tf_puntaje.getText());
+                while(puntaje<0||puntaje>5){
+                    puntaje = Integer.parseInt(JOptionPane.showInputDialog(this, "No se admite ese valor, ingrese otro: "));
+                }
                 titulo = tf_titulo.getText();
                 descripcion = ta_descripcion.getText();
                 num_copias = Integer.parseInt(tf_copias.getText());
@@ -906,6 +1039,7 @@ public class Biblioteca extends javax.swing.JFrame {
                 rb_romance.setSelected(false);
                 
                 JOptionPane.showMessageDialog(this, "Libro agregado con exito! ");
+                Acciones.add("Libro agregado");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Hubo un problema, ingrese de nuevo los datos");
             }
@@ -939,11 +1073,12 @@ public class Biblioteca extends javax.swing.JFrame {
                         +"\nNumero de copias: "+libros.get(i).getNum_copias());
                     }
                 }
+                Acciones.add("Se busco un libro");
             }else{
                 JOptionPane.showMessageDialog(this, "No hay libros para mostrar");
             }
         }else{
-            
+                JOptionPane.showMessageDialog(this, "Necesitas ser admin");
         }
     }//GEN-LAST:event_jb_BuscarLibroMouseClicked
 
@@ -958,6 +1093,7 @@ public class Biblioteca extends javax.swing.JFrame {
             tf_SolicitudNombre.setText("");
             ta_DescripcionAmigo.setText("");
             JOptionPane.showMessageDialog(this, "Adios :)");
+            Acciones.add("Sesion cerrada");
         }
     }//GEN-LAST:event_jb_cerrarSesionMouseClicked
 
@@ -968,7 +1104,7 @@ public class Biblioteca extends javax.swing.JFrame {
         if (Usuariohabilitado==true) {
             nombre  = tf_SolicitudNombre.getText();
             for (int i = 0; i < usuarios.size(); i++) {
-                if (usuarios.get(i).getNombreUsuario().equalsIgnoreCase(nombre)) {
+                if (usuarios.get(i).getNombreUsuario().equalsIgnoreCase(nombre)&&nombre.equals(usuarios.get(Elusuario_numero).getNombreUsuario())==false) {
                     //Le añade la solicitud al usuario
                     usuarios.get(i).setMisSolicitudes(usuarios.get(Elusuario_numero).getNombre_completo());
                     correcto = true;
@@ -978,6 +1114,7 @@ public class Biblioteca extends javax.swing.JFrame {
             if (correcto==false) {
                 JOptionPane.showMessageDialog(this, "Ingrese bien el nombre del usuario");
             }else{
+                Acciones.add("Se mando solicitud");
                 JOptionPane.showMessageDialog(this, "Solicitud ingresada exitosamente");
             }
         }else if (Adminhabilitado==true){
@@ -993,6 +1130,7 @@ public class Biblioteca extends javax.swing.JFrame {
         if (Adminhabilitado==true) {
             JOptionPane.showMessageDialog(this, "Inicie sesion con otro usuario");
         }else if (Usuariohabilitado==true){
+            Acciones.add("Se busco todos los libros");
             for (int i = 0; i < libros.size(); i++) {
                 if (libros.get(i).getGenero().equals(usuarios.get(Elusuario_numero).getGenero_fav())) {
                     ta_Librosfav.setText(libros.get(i).toString());
@@ -1015,6 +1153,7 @@ public class Biblioteca extends javax.swing.JFrame {
             }
             if (correcto==true) {
                 JOptionPane.showMessageDialog(this, "Se agrego un libro exitosamente");
+                Acciones.add("Se agrego un libro");
             }else{
                 JOptionPane.showMessageDialog(this, "No se agrego libro, ingrese correctamente el nombre");
             }
@@ -1027,10 +1166,45 @@ public class Biblioteca extends javax.swing.JFrame {
 
     private void jb_ActualizarListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ActualizarListaMouseClicked
         // TODO add your handling code here:
+        String acum = "";
         for (int i = 0; i < libros.size(); i++) {
-            ta_DescripcionTodosLibros.setText(libros.get(i).toString());
+            acum+=libros.get(i).toString()+"\n";
         }
+        ta_DescripcionTodosLibros.setText(acum);
+        Acciones.add("Se actualizo la lista de libros");
     }//GEN-LAST:event_jb_ActualizarListaMouseClicked
+
+    private void jb_ActualizarAccionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ActualizarAccionesMouseClicked
+        String acum = "";
+        for (int i = 0; i < Acciones.size(); i++) {
+           acum+=Acciones.get(i).toString()+"\n";
+        }
+        ta_Listadeacciones.setText(acum);
+    }//GEN-LAST:event_jb_ActualizarAccionesMouseClicked
+
+    private void jb_EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_EliminarMouseClicked
+        String nombre;
+        if (Adminhabilitado==true) {
+            nombre = ta_libroseliminar.getText();
+            for (int i = 0; i < libros.size(); i++) {
+                if (libros.get(i).getTitulo().equals(nombre)) {
+                libros.remove(i);
+                }
+            }
+        }else if (Usuariohabilitado==true){
+            JOptionPane.showMessageDialog(this, "No puede usar esta funcion");
+        }else{
+            JOptionPane.showMessageDialog(this, "Ingrese sesion con adm");    
+        }
+    }//GEN-LAST:event_jb_EliminarMouseClicked
+
+    private void jb_ActualizarEliminarListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ActualizarEliminarListaMouseClicked
+        String acum = "";
+        for (int i = 0; i < libros.size(); i++) {
+           acum+=libros.get(i).toString()+"\n";
+        }
+        ta_libroseliminar.setText(acum);
+    }//GEN-LAST:event_jb_ActualizarEliminarListaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1119,6 +1293,9 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1130,16 +1307,23 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jb_ActualizarAcciones;
+    private javax.swing.JButton jb_ActualizarEliminarLista;
     private javax.swing.JButton jb_ActualizarLista;
     private javax.swing.JButton jb_AgregarLibro;
     private javax.swing.JButton jb_BuscarLibro;
     private javax.swing.JButton jb_BuscarLibrosFav;
+    private javax.swing.JButton jb_Eliminar;
     private javax.swing.JButton jb_MandarSolicitud;
     private javax.swing.JButton jb_cerrarSesion;
     private javax.swing.JButton jb_guardarUser;
@@ -1155,7 +1339,10 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JTextArea ta_DescripcionDeUnLibro;
     private javax.swing.JTextArea ta_DescripcionTodosLibros;
     private javax.swing.JTextArea ta_Librosfav;
+    private javax.swing.JTextArea ta_Listadeacciones;
     private javax.swing.JTextArea ta_descripcion;
+    private javax.swing.JTextArea ta_libroseliminar;
+    private javax.swing.JTextField tf_EliminarLibro;
     private javax.swing.JTextField tf_NombreCompleto;
     private javax.swing.JTextField tf_NombreLibro;
     private javax.swing.JTextField tf_NombreUsuario;
@@ -1175,4 +1362,5 @@ public class Biblioteca extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     static ArrayList<Usuario> usuarios = new ArrayList();
     static ArrayList<Libro> libros = new ArrayList();
+    static ArrayList Acciones = new ArrayList();
 }
