@@ -113,6 +113,15 @@ public class Usuario {
     public void setMisSolicitudes(String nombre) {
         this.MisSolicitudes.add(nombre);
     }
+
+    @Override
+    public String toString() {
+        return "Nombre de usuario: " + nombre_usuario + 
+                "\nNombre completo: "+nombre_completo+
+                "\nGenero favorito"+ genero_fav + 
+                "\nFecha de nacimiento: "+fecha+
+                "\nNumero de telefono: "+num_telefono;
+    }
     
     
 }
