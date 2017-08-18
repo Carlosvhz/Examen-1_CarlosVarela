@@ -17,7 +17,8 @@ public class Usuario {
     private Date fecha;
     private int num_telefono;
     private ArrayList<Libro> Mislibros = new ArrayList();
-    private ArrayList amigos = new ArrayList();
+    private ArrayList<Usuario> amigos = new ArrayList();
+    private ArrayList MisSolicitudes = new ArrayList();
 
     public Usuario() {
     }
@@ -101,8 +102,16 @@ public class Usuario {
         return amigos;
     }
 
-    public void setAmigos(ArrayList amigos) {
-        this.amigos = amigos;
+    public void setAmigos(Usuario amigo) {
+        this.amigos.add(amigo);
+    }
+
+    public ArrayList getMisSolicitudes() {
+        return MisSolicitudes;
+    }
+
+    public void setMisSolicitudes(String nombre) {
+        this.MisSolicitudes.add(nombre);
     }
     
     
