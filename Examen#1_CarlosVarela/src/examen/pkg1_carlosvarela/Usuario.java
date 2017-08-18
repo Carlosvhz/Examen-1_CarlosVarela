@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Usuario {
     
-    private String nombre, contraseña, correo, nombre_completo, genero_fav;
+    private String nombre_usuario, contraseña, correo, nombre_completo, genero_fav;
     private Date fecha;
     private int num_telefono;
     private ArrayList<Libro> Mislibros = new ArrayList();
@@ -23,8 +23,8 @@ public class Usuario {
     }
 
     
-    public Usuario(String nombre, String contraseña, String correo, String nombre_completo, String genero_fav, Date fecha, int num_telefono) {
-        this.nombre = nombre;
+    public Usuario(String nombre_usuario, String contraseña, String correo, String nombre_completo, String genero_fav, Date fecha, int num_telefono) {
+        this.nombre_usuario = nombre_usuario;
         this.contraseña = contraseña;
         this.correo = correo;
         this.nombre_completo = nombre_completo;
@@ -33,12 +33,12 @@ public class Usuario {
         this.num_telefono = num_telefono;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreUsuario() {
+        return nombre_usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreUsuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
     public String getContraseña() {
