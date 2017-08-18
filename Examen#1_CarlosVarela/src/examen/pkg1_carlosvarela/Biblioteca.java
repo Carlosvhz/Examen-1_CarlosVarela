@@ -18,7 +18,7 @@ public class Biblioteca extends javax.swing.JFrame {
     static boolean Adminhabilitado = false;
     static boolean Usuariohabilitado = false;
     static int Elusuario_numero;
-    static String nombreAdmin = "Carlos", contraseñaAdmin = "6913";
+    static String nombreAdmin = ">:v", contraseñaAdmin = "69";
     /**
      * Creates new form Biblioteca
      */
