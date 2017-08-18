@@ -17,6 +17,7 @@ public class Biblioteca extends javax.swing.JFrame {
 
     static boolean Adminhabilitado = false;
     static boolean Usuariohabilitado = false;
+    static int Elusuario_numero;
     static String nombreAdmin = "Carlos", contraseñaAdmin = "6913";
     /**
      * Creates new form Biblioteca
@@ -89,9 +90,18 @@ public class Biblioteca extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         tf_autor = new javax.swing.JTextField();
         fb_guardarLibro = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        tf_quierobuscar = new javax.swing.JTextField();
+        jb_BuscarLibro = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_DescripcionDeUnLibro = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -463,31 +473,67 @@ public class Biblioteca extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar Libros", jp_AgregarLibros);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
-        );
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel23.setText("¿Que libro desea buscar?...");
 
-        jTabbedPane1.addTab("tab4", jPanel1);
+        jLabel24.setText("Ingrese nombre o numero del libro: ");
+
+        jb_BuscarLibro.setText("Buscar");
+        jb_BuscarLibro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_BuscarLibroMouseClicked(evt);
+            }
+        });
+
+        jLabel25.setText("Descripción: ");
+
+        ta_DescripcionDeUnLibro.setColumns(20);
+        ta_DescripcionDeUnLibro.setRows(5);
+        jScrollPane2.setViewportView(ta_DescripcionDeUnLibro);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel25)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jb_BuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_quierobuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(253, 253, 253)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_quierobuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_BuscarLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab5", jPanel2);
+        jTabbedPane1.addTab("Buscar Libros", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -500,7 +546,42 @@ public class Biblioteca extends javax.swing.JFrame {
             .addGap(0, 461, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab6", jPanel3);
+        jTabbedPane1.addTab("Agregar Amigos", jPanel3);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel22.setText("Agregar Libros a mi lista");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(256, 256, 256)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(283, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(396, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Mi Lista de libros", jPanel1);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 748, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 461, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Buscar Libros favoritos", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -554,10 +635,10 @@ public class Biblioteca extends javax.swing.JFrame {
             dc_Fecha.setDate(new Date());
             tf_correo.setText("");
             tf_contraseña.setText("");
-            cb_accion.setAction(null);
-            cb_fantasia.setAction(null);
-            cb_historia.setAction(null);
-            cb_romance.setAction(null);
+            cb_accion.setSelected(false);
+            cb_fantasia.setSelected(false);
+            cb_historia.setSelected(false);
+            cb_romance.setSelected(false);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "No se pudieron guardar los datos, ingrese de nuevo, correctamente");
             }
@@ -572,10 +653,10 @@ public class Biblioteca extends javax.swing.JFrame {
             dc_Fecha.setDate(new Date());
             tf_correo.setText("");
             tf_contraseña.setText("");
-            cb_accion.setAction(null);
-            cb_fantasia.setAction(null);
-            cb_historia.setAction(null);
-            cb_romance.setAction(null);
+            cb_accion.setSelected(false);
+            cb_fantasia.setSelected(false);
+            cb_historia.setSelected(false);
+            cb_romance.setSelected(false);
         }
     }//GEN-LAST:event_jb_guardarUserMouseClicked
 
@@ -634,15 +715,59 @@ public class Biblioteca extends javax.swing.JFrame {
                 edicion = tf_edicion.getText();
                 autor = tf_autor.getText();
                 fecha_publicacion = dc_FechaLibro.getDate();
+                
                 libros.add(new Libro(titulo, descripcion, genero, autor, edicion, fecha_publicacion, num_copias, puntaje));
+                
+                //Limpiando variables
+                tf_titulo.setText("");
+                tf_puntaje.setText("");
+                ta_descripcion.setText("");
+                tf_copias.setText("");
+                rb_accion.setSelected(false);
+                rb_fantasia.setSelected(false);
+                rb_historia.setSelected(false);
+                rb_romance.setSelected(false);
+                
                 JOptionPane.showMessageDialog(this, "Libro agregado con exito! ");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Hubo un problema, ingrese de nuevo los datos");
             }
         }else{
             JOptionPane.showMessageDialog(this, "No puedes agregar libros, no eres admin");
+            tf_titulo.setText("");
+            tf_puntaje.setText("");
+            ta_descripcion.setText("");
+            tf_copias.setText("");
+            rb_accion.setSelected(false);
+            rb_fantasia.setSelected(false);
+            rb_historia.setSelected(false);
+            rb_romance.setSelected(false);
         }
     }//GEN-LAST:event_fb_guardarLibroMouseClicked
+
+    private void jb_BuscarLibroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_BuscarLibroMouseClicked
+        String buscar;
+        if (Usuariohabilitado==true){
+            if (libros.size()>0) {
+                buscar = tf_quierobuscar.getText();
+                for (int i = 0; i < libros.size(); i++) {
+                    if (libros.get(i).getTitulo().equalsIgnoreCase(buscar)) {
+                        ta_DescripcionDeUnLibro.setText("Titulo: "+libros.get(i).getTitulo()
+                        +"\nAutor: "+libros.get(i).getAutor()
+                        +"\nDescripcion: "+libros.get(i).getPuntaje()
+                        +"\nGenero: "+libros.get(i).getGenero()
+                        +"\nEdición: "+libros.get(i).getEdicion()
+                        +"\nAño de publicacion: "+libros.get(i).getFecha_edicion()
+                        +"\nNumero de copias: "+libros.get(i).getNum_copias());
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "No hay libros para mostrar");
+            }
+        }else{
+            
+        }
+    }//GEN-LAST:event_jb_BuscarLibroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -684,6 +809,7 @@ public class Biblioteca extends javax.swing.JFrame {
             for (int i = 0; i < usuarios.size(); i++) {
                 if (usuarios.get(i).getNombreUsuario().equals(nombre)&&usuarios.get(i).getContraseña().equals(contraseña)) {
                     Usuariohabilitado = true;
+                    Elusuario_numero = i;
                     return true;
                 }
             }
@@ -717,6 +843,10 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -727,8 +857,11 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jb_BuscarLibro;
     private javax.swing.JButton jb_guardarUser;
     private javax.swing.JButton jb_iniciarsesion;
     private javax.swing.JPanel jp_AgregarLibros;
@@ -738,6 +871,7 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_fantasia;
     private javax.swing.JRadioButton rb_historia;
     private javax.swing.JRadioButton rb_romance;
+    private javax.swing.JTextArea ta_DescripcionDeUnLibro;
     private javax.swing.JTextArea ta_descripcion;
     private javax.swing.JTextField tf_NombreCompleto;
     private javax.swing.JTextField tf_NombreUsuario;
@@ -749,6 +883,7 @@ public class Biblioteca extends javax.swing.JFrame {
     private javax.swing.JTextField tf_correo;
     private javax.swing.JTextField tf_edicion;
     private javax.swing.JTextField tf_puntaje;
+    private javax.swing.JTextField tf_quierobuscar;
     private javax.swing.JTextField tf_telefono;
     private javax.swing.JTextField tf_titulo;
     private javax.swing.JTextField tf_valor;

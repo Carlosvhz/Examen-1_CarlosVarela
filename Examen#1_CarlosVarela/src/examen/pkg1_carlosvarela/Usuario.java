@@ -93,8 +93,8 @@ public class Usuario {
         return Mislibros;
     }
 
-    public void setMislibros(ArrayList<Libro> Mislibros) {
-        this.Mislibros = Mislibros;
+    public void setMislibros(Libro miLibro) {
+        this.Mislibros.add(miLibro);
     }
 
     public ArrayList getAmigos() {
